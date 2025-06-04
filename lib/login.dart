@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_app/loginpage.dart';
+import 'package:flutter_app/register.dart';
 
 class Login extends StatelessWidget {
-  Login({super.key});
+  const Login({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -24,7 +25,6 @@ class Login extends StatelessWidget {
             onPressed: () {
               Navigator.push(context, MaterialPageRoute(builder: (context) => loginpage()));
             },
-            child: Text("login", style: TextStyle(fontWeight: FontWeight.bold)),
             style: ElevatedButton.styleFrom(
               backgroundColor: const Color.fromARGB(255, 169, 169, 169),
               foregroundColor: const Color.fromARGB(255, 0, 0, 0),
@@ -33,11 +33,13 @@ class Login extends StatelessWidget {
               ),
               minimumSize: Size(double.infinity, 50),
             ),
+            child: Text("login", style: TextStyle(fontWeight: FontWeight.bold)),
           ),
           SizedBox(height: 30),
           ElevatedButton(
-            onPressed: () {},
-            child: Text("register", style: TextStyle(fontWeight: FontWeight.bold)),
+            onPressed: () {
+               Navigator.push(context, MaterialPageRoute(builder: (context) => Signuppage()));
+            },
             style: ElevatedButton.styleFrom(
               backgroundColor: const Color.fromARGB(255, 144, 143, 143),
               foregroundColor: const Color.fromARGB(253, 0, 0, 0),
@@ -46,6 +48,7 @@ class Login extends StatelessWidget {
               ),
               minimumSize: Size(double.infinity, 50),
             ),
+            child: Text("register", style: TextStyle(fontWeight: FontWeight.bold)),
           ),
         ],
       ),
